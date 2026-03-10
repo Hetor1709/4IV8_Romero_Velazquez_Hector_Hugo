@@ -1,37 +1,45 @@
 * {
   margin: 0;
   padding: 0;
-  color: chartreuse;
+  color: #2a2d34;
   text-align: center;
 }
+
 html,
 body {
-  background-color: darkblue;
+  background-color: #2a2d34;
 }
+
 .container-main {
-  border: 7px solid rgb(145, 132, 72);
+  border: 7px solid #f26430;
   border-radius: 50px;
   margin: 2rem;
-  background-color: rgb(227, 111, 229);
+  background-color: #6761a8;
 }
+
 nav,
 section,
 footer,
 article,
 aside {
-  border: 4px solid rgb(255, 0, 0);
+  border: 4px solid #f26430;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem;
 }
-article, aside {
+
+article,
+aside {
   display: inline-flex;
   height: 300px;
   width: 40%;
-
+  background-color: #009ddc;
+  color: white;
 }
 
-
-nav, footer, section {
-background-color: darkslategrey;
+nav,
+footer,
+section {
+  background-color: #009b72;
+  color: white;
 }
