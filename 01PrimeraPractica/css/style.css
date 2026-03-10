@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: chartreuse;
+  text-align: center;
+}
+html,
+body {
+  background-color: darkblue;
+}
+.container-main {
+  border: 7px solid rgb(145, 132, 72);
+  border-radius: 50px;
+  margin: 2rem;
+  background-color: rgb(227, 111, 229);
+}
+nav,
+section,
+footer,
+article,
+aside {
+  border: 4px solid rgb(255, 0, 0);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+article, aside {
+  display: inline-flex;
+  height: 300px;
+  width: 40%;
+
+}
+
+
+nav, footer, section {
+background-color: darkslategrey;
+}
