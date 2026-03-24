@@ -6,6 +6,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.Period;
 
 public class ExamenPrimerParcial {
+    //El examen que hice fue el C pq por estaba sentado con los del C
+    //Romero Velázquez Héctor Hugo      4IV8
+    //PS el program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -42,7 +45,7 @@ public class ExamenPrimerParcial {
             }
             double promedio = suma / arregloNumeros.size();
 
-            // Calcular mediana
+            // Mediana
             Collections.sort(arregloNumeros);
             double mediana;
             int tamano = arregloNumeros.size();
@@ -52,7 +55,7 @@ public class ExamenPrimerParcial {
                 mediana = arregloNumeros.get(tamano / 2);
             }
 
-            // Calcular moda
+            // Moda
             int moda = calcularModa(arregloNumeros);
 
             System.out.println("Media: " + promedio);
