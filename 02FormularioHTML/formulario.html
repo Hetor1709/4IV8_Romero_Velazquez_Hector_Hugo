@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./Js/validarformulario.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,7 +14,7 @@
 GET; Este metodo envia por medio de la URL todo la informacion del formulario a traves del navegador. Su funcion principal es obtener los datos del servicio,pero es el metodo ms vulnerable de todos derivado a que se pueden generar inyecciones de codigo.
 POST: Este metodo se encarga de registrar una nueva entradaal sistema tambien utuliza la URL como envio por defecto pero su facultad es poder ocultarla., esto significa que los datos no son visibles para el usuario comun en el navegador. (PUT es para actualizar, DELETE para eso)
 
-<form name="formulario" method="post" id="formulario">
+<form name="formulario" method="post" id="formulario" onsubmit="return validar(this);">
     <label for="Nombre">
         Nombre:
            </label>
