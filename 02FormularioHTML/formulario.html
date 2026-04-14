@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>Todos los formularios que estan en internet tienen metodos de programacion por defecto. Estos metodos nos riven para hacer las acciones principalos son:
+        Acciones para poderse conectar con los servidores a traves de las arquitecturas cliente servidor.
+    Es que vamos a tener por defecto que todos los formularios utilizan el metodo GET, y el segundo metodo principal es POST, aunque existen otros metodos que se encargan del intercambio de información.
+GET; Este metodo envia por medio de la URL todo la informacion del formulario a traves del navegador. Su funcion principal es obtener los datos del servicio,pero es el metodo ms vulnerable de todos derivado a que se pueden generar inyecciones de codigo.
+POST: Este metodo se encarga de registrar una nueva entradaal sistema tambien utuliza la URL como envio por defecto pero su facultad es poder ocultarla., esto significa que los datos no son visibles para el usuario comun en el navegador. (PUT es para actualizar, DELETE para eso)
+
+<form name="formulario" method="GET" id="formulario">
+    <label for="Nombre">
+        Nombre:
+           </label>
+        <br>
+        <input type="text" name="nombre" id="nombre" placeholder="Porfavor escriba aqui su nombre">
+        <br>
+           <label for="Edad">
+        Edad:
+           </label>
+        <br>
+        <input type="number" name="edad" id="edad" placeholder="Porfavor escriba aqui su edad">
+        <br>
+           <label for="Email">
+        Email:
+           </label>
+        <br>
+        <input type="email" name="email" id="email" placeholder="Porfavor escriba aqui su email">
+        <br>
+        <input type="submit" name="enviar" id="enviar" value="Enviar Datos">
+ <br>
+        <input type="reset" name="borrar" id="borrar" value="Borrar Datos">
+
+
+ 
+</form>
+
+
+</p>
+    </div>
+</body>
+</html>

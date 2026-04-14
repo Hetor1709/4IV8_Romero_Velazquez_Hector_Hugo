@@ -11,7 +11,6 @@ public class ExamenPrimerParcial {
     //PS el program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         boolean reiniciar;
         do {
             reiniciar = false;
