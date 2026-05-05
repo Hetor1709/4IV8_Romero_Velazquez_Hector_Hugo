@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Invertido</title>
+    <script src="./JS/Ejercicio1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+    <h1>Ejercicio 1</h1>
+
+    <form name="formulario1" method="post" id="formulario1" onsubmit="return calcularCapital(this);">
+        
+        <label for="capital">
+            Capital a invertir
+            <br>
+            (Montos entre $1,000 y $500,000)
+            <br>
+            <input type="number" name="capital" id="capital" placeholder="Ingrese el monto a invertir">
+        </label>
+        <br>
+
+        <label for="meses">
+            Periodo a calcular
+            <br>
+            <select name="meses" id="meses">
+                <option value="">Seleccione un plazo</option>
+                <option value="1">1 mes</option>
+                <option value="3">3 meses</option>
+                <option value="6">6 meses</option>
+                <option value="9">9 meses</option>
+                <option value="12">12 meses</option>
+                <option value="15">15 meses</option>
+                <option value="24">24 meses</option>
+            </select>
+        </label>
+        <br>
+
+        <input type="submit" name="enviar" id="enviar" value="Calcular">
+        <input type="reset" name="borrar" id="borrar" value="Limpiar">
+
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <a href="./menu.html">Volver al menú</a>
+
+</body>
+</html>

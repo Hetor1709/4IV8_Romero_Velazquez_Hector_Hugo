@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento</title>
+    <script src="./JS/Ejercicio3.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+    <h1>Ejercicio 3</h1>
+
+    <form name="formulario3" method="post" id="formulario3" onsubmit="return calcularDescuento(this);">
+        
+        <label for="compra">
+            Ingrese el valor de su compra
+            <br>
+            (Máximo $1,000,000)
+            <br>
+            <input type="number" name="compra" id="compra" placeholder="Ingrese el monto de la compra">
+        </label>
+        <br>
+
+        <input type="submit" name="enviar" id="enviar" value="Calcular">
+        <input type="reset" name="borrar" id="borrar" value="Limpiar">
+
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <a href="./menu.html">Volver al menú</a>
+
+</body>
+</html>
