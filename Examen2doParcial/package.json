@@ -1,0 +1,25 @@
+{
+  "name": "4iv8_romero_velazquez_hector_hugo",
+  "version": "1.0.0",
+  "description": "Repositorio en linea de Github para la materia de nuevas tecnologias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hetor1709/4IV8_Romero_Velazquez_Hector_Hugo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hetor1709/4IV8_Romero_Velazquez_Hector_Hugo/issues"
+  },
+  "homepage": "https://github.com/Hetor1709/4IV8_Romero_Velazquez_Hector_Hugo#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3"
+  }
+}
