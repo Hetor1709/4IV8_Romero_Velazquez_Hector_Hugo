@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'n0m3l0',
+    password: 'hehurove1709hh',
     database: 'pnt_practica1',
     waitForConnections: true, //esperar si no hay conexiones disponibles
     connectionLimit: 10, //maximo de conexiones simultaneas
