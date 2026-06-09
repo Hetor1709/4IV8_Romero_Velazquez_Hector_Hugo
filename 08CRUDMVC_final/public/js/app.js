@@ -629,6 +629,121 @@ const tablaSSBUPersonajes     = document.getElementById('tabla-ssbu-personajes')
 const cargaSSBUPersonajes     = document.getElementById('carga-ssbu-personajes');
 const contadorSSBUPersonajes  = document.getElementById('contador-ssbu-personajes');
 
+// Referencias a elementos de error en el formulario
+const errorSSBUNombre = document.getElementById('error-ssbu-nombre');
+const errorSSBUSaga   = document.getElementById('error-ssbu-saga');
+const errorSSBUPeso   = document.getElementById('error-ssbu-peso');
+
+// ---- Validación del formulario SSBU (cliente) ----
+function validarFormSSBU() {
+    let ok = true;
+
+    const nombre = inputSSBUNombre.value.trim();
+    const saga   = inputSSBUSaga.value.trim();
+    const peso   = inputSSBUPeso.value.trim();
+
+    // --- Nombre ---
+    if (!nombre) {
+        mostrarErrorSSBU(errorSSBUNombre, inputSSBUNombre, 'El nombre es obligatorio.');
+        ok = false;
+    } else if (nombre.length < 2) {
+        mostrarErrorSSBU(errorSSBUNombre, inputSSBUNombre, 'Mínimo 2 caracteres.');
+        ok = false;
+    } else if (nombre.length > 100) {
+        mostrarErrorSSBU(errorSSBUNombre, inputSSBUNombre, 'Máximo 100 caracteres.');
+        ok = false;
+    } else if (/\d/.test(nombre)) {
+        mostrarErrorSSBU(errorSSBUNombre, inputSSBUNombre, 'El nombre no puede contener números.');
+        ok = false;
+    } else if (!/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-\.&']+$/.test(nombre)) {
+        mostrarErrorSSBU(errorSSBUNombre, inputSSBUNombre, 'Solo letras, espacios y guiones.');
+        ok = false;
+    } else {
+        limpiarErrorSSBU(errorSSBUNombre, inputSSBUNombre);
+    }
+
+    // --- Saga ---
+    if (!saga) {
+        mostrarErrorSSBU(errorSSBUSaga, inputSSBUSaga, 'La saga es obligatoria.');
+        ok = false;
+    } else if (saga.length < 2) {
+        mostrarErrorSSBU(errorSSBUSaga, inputSSBUSaga, 'Mínimo 2 caracteres.');
+        ok = false;
+    } else if (saga.length > 100) {
+        mostrarErrorSSBU(errorSSBUSaga, inputSSBUSaga, 'Máximo 100 caracteres.');
+        ok = false;
+    } else if (/\d/.test(saga)) {
+        mostrarErrorSSBU(errorSSBUSaga, inputSSBUSaga, 'La saga no puede contener números.');
+        ok = false;
+    } else if (!/^[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-\.&']+$/.test(saga)) {
+        mostrarErrorSSBU(errorSSBUSaga, inputSSBUSaga, 'Solo letras, espacios y guiones.');
+        ok = false;
+    } else {
+        limpiarErrorSSBU(errorSSBUSaga, inputSSBUSaga);
+    }
+
+    // --- Peso ---
+    if (!peso) {
+        mostrarErrorSSBU(errorSSBUPeso, inputSSBUPeso, 'El peso es obligatorio.');
+        ok = false;
+    } else if (!/^\d+(\.\d+)?$/.test(peso)) {
+        mostrarErrorSSBU(errorSSBUPeso, inputSSBUPeso, 'El peso solo puede contener números (sin signos ni letras).');
+        ok = false;
+    } else {
+        const pesoNum = parseFloat(peso);
+        if (pesoNum < 0) {
+            mostrarErrorSSBU(errorSSBUPeso, inputSSBUPeso, 'El peso no puede ser negativo.');
+            ok = false;
+        } else if (pesoNum > 9999) {
+            mostrarErrorSSBU(errorSSBUPeso, inputSSBUPeso, 'El peso no puede superar 4 dígitos (máx. 9999).');
+            ok = false;
+        } else {
+            limpiarErrorSSBU(errorSSBUPeso, inputSSBUPeso);
+        }
+    }
+
+    return ok;
+}
+
+function mostrarErrorSSBU(spanError, input, mensaje) {
+    if (spanError) spanError.textContent = mensaje;
+    if (input) input.classList.add('input-error');
+}
+
+function limpiarErrorSSBU(spanError, input) {
+    if (spanError) spanError.textContent = '';
+    if (input) input.classList.remove('input-error');
+}
+
+// ---- Bloquear caracteres no válidos en tiempo real ----
+if (inputSSBUNombre) {
+    inputSSBUNombre.addEventListener('input', () => {
+        // Elimina dígitos y caracteres especiales al vuelo
+        inputSSBUNombre.value = inputSSBUNombre.value.replace(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-\.&']/g, '');
+    });
+}
+if (inputSSBUSaga) {
+    inputSSBUSaga.addEventListener('input', () => {
+        inputSSBUSaga.value = inputSSBUSaga.value.replace(/[^A-Za-záéíóúÁÉÍÓÚüÜñÑ\s\-\.&']/g, '');
+    });
+}
+if (inputSSBUPeso) {
+    inputSSBUPeso.addEventListener('input', () => {
+        // Solo dígitos y un punto decimal
+        let val = inputSSBUPeso.value.replace(/[^0-9.]/g, '');
+        // Evitar más de un punto decimal
+        const partes = val.split('.');
+        if (partes.length > 2) val = partes[0] + '.' + partes.slice(1).join('');
+        inputSSBUPeso.value = val;
+    });
+    // Prevenir signo menos con teclado
+    inputSSBUPeso.addEventListener('keydown', (e) => {
+        if (e.key === '-' || e.key === '+' || e.key === 'e' || e.key === 'E') {
+            e.preventDefault();
+        }
+    });
+}
+
 // ==================== PERSONAJES ====================
 
 async function cargarPersonajesSSBU() {
@@ -697,6 +812,11 @@ async function editarPersonajeSSBU(id) {
         inputSSBUSaga.value        = resp.data.saga;
         inputSSBUPeso.value        = resp.data.peso;
 
+        // Limpiar errores al cargar datos para editar
+        limpiarErrorSSBU(errorSSBUNombre, inputSSBUNombre);
+        limpiarErrorSSBU(errorSSBUSaga, inputSSBUSaga);
+        limpiarErrorSSBU(errorSSBUPeso, inputSSBUPeso);
+
         ssbuFormTitulo.textContent         = 'Editar Personaje';
         btnGuardarSSBU.textContent         = 'Actualizar';
         btnCancelarSSBU.style.display      = 'inline-block';
@@ -738,6 +858,11 @@ function limpiarFormSSBU() {
     btnGuardarSSBU.textContent    = 'Guardar';
     btnCancelarSSBU.style.display = 'none';
 
+    // Limpiar errores
+    limpiarErrorSSBU(errorSSBUNombre, inputSSBUNombre);
+    limpiarErrorSSBU(errorSSBUSaga,   inputSSBUSaga);
+    limpiarErrorSSBU(errorSSBUPeso,   inputSSBUPeso);
+
 }
 
 btnCancelarSSBU.addEventListener('click', limpiarFormSSBU);
@@ -746,14 +871,8 @@ formSSBUPersonaje.addEventListener('submit', async (e) => {
 
     e.preventDefault();
 
-    if (
-        !inputSSBUNombre.value.trim() ||
-        !inputSSBUSaga.value.trim()   ||
-        !inputSSBUPeso.value
-    ) {
-        mostrarNotificacion('Completa todos los campos', 'error');
-        return;
-    }
+    // Ejecutar validación completa antes de enviar
+    if (!validarFormSSBU()) return;
 
     const datos = {
         nombre : inputSSBUNombre.value.trim(),
