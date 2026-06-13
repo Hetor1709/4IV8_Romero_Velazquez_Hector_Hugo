@@ -1,18 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Evidencias</title>
+    <title>Portafolio — Romero Velázquez Héctor Hugo</title>
+    <link rel="stylesheet" href="./css/portafolio.css">
 </head>
 <body>
-    <p>Este es el portafolio de evidencia de aqui va tu nombre, y no pongan aqui va tu nombre literal si pongan su nombre, despues de eso deberan de poner aqui todos sus ejercicios</p>
 
-    <p>aqui va tu lista</p>
+    <!-- =========== ENCABEZADO / CARÁTULA =========== -->
+    <header class="pf-header">
+        <div class="pf-header-inner">
+            <div class="pf-caratula">
+                <h1>Portafolio de Evidencias</h1>
+                <div class="pf-subtitulo">
+                    <span>👤 Romero Velázquez Héctor Hugo</span>
+                    <span>🏫 CECyT 9 — "Juan de Dios Bátiz"</span>
+                    <span>📚 Grupo: 4IV8</span>
+                    <span>📅 2025 – 2026</span>
+                </div>
+            </div>
+            <p style="font-size:0.92rem; color:rgba(255,255,255,0.7); max-width:620px; margin:0 auto;">
+                Materia: <strong style="color:#fff;">Nuevas Tecnologías</strong> &nbsp;|&nbsp;
+                Ciclo escolar 2025-2026
+            </p>
+        </div>
+    </header>
 
-    <li>
-        <ol> <a href="./01PrimeraPractica/inicio.html">Vamos al inicio</a> </ol>
-    </li>
-    
+    <hr class="pf-divider">
+
+    <!-- =========== OBJETIVO =========== -->
+    <section class="pf-section">
+        <h2 class="pf-section-title">🎯 Objetivo del Portafolio</h2>
+        <div class="pf-card">
+            <p>
+                El presente portafolio de evidencias tiene como propósito documentar y demostrar
+                el aprendizaje adquirido a lo largo del curso de <strong>Nuevas Tecnologías</strong>.
+                Reúne las prácticas desarrolladas durante el ciclo escolar, organizadas de forma
+                progresiva, desde el manejo básico de HTML y CSS hasta la implementación de
+                aplicaciones web full-stack con arquitectura MVC, Express.js y MySQL.
+            </p>
+            <br>
+            <p>
+                Cada práctica refleja la aplicación de conceptos vistos en clase y el desarrollo
+                de habilidades en programación web, lógica algorítmica, diseño de interfaces y
+                construcción de sistemas de gestión de datos.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========== ELEMENTOS APRENDIDOS =========== -->
+    <section class="pf-section" style="padding-top:0;">
+        <h2 class="pf-section-title">📖 Elementos Aprendidos</h2>
+        <div class="pf-card">
+            <div class="pf-chips">
+                <span class="pf-chip c-azul">Estructura HTML semántica</span>
+                <span class="pf-chip c-azul">CSS y diseño responsive</span>
+                <span class="pf-chip c-azul">Etiquetas de sección (nav, header, footer, aside)</span>
+                <span class="pf-chip c-naranja">Formularios y validación</span>
+                <span class="pf-chip c-naranja">Métodos GET y POST</span>
+                <span class="pf-chip c-naranja">JavaScript vanilla (DOM)</span>
+                <span class="pf-chip c-verde">Algoritmia y lógica de programación</span>
+                <span class="pf-chip c-verde">Funciones y modularidad en JS</span>
+                <span class="pf-chip c-verde">Manejo de eventos</span>
+                <span class="pf-chip c-morado">Arquitectura Cliente–Servidor</span>
+                <span class="pf-chip c-morado">Node.js y Express.js</span>
+                <span class="pf-chip c-morado">API REST (CRUD)</span>
+                <span class="pf-chip c-morado">MySQL y consultas SQL</span>
+                <span class="pf-chip c-morado">Arquitectura MVC</span>
+                <span class="pf-chip c-morado">CORS y comunicación frontend–backend</span>
+                <span class="pf-chip c-azul">Control de versiones con Git y GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== ENLACES EXTERNOS =========== -->
+    <section class="pf-section" style="padding-top:0;">
+        <h2 class="pf-section-title">🔗 Código y Página Pública</h2>
+        <div class="pf-card">
+            <div class="pf-links">
+                <a class="pf-link-btn github"
+                   href="https://github.com/HectorRomeroVelazquez/4IV8_Romero_Velazquez_Hector_Hugo"
+                   target="_blank" rel="noopener noreferrer">
+                    ⬡ Repositorio en GitHub
+                </a>
+                <a class="pf-link-btn pagina"
+                   href="https://hectorromerovelazquez.github.io/4IV8_Romero_Velazquez_Hector_Hugo/"
+                   target="_blank" rel="noopener noreferrer">
+                    🌐 Página Pública (GitHub Pages)
+                </a>
+            </div>
+            <p style="margin-top:0.8rem; font-size:0.83rem; color:#6b7280;">
+                ⚠️ Actualiza los enlaces con tu URL real de GitHub si difiere de los mostrados.
+            </p>
+        </div>
+    </section>
+
+    <!-- =========== MENÚ DE PRÁCTICAS =========== -->
+    <section class="pf-section" style="padding-top:0; padding-bottom:2.5rem;">
+        <h2 class="pf-section-title">📂 Prácticas Realizadas</h2>
+        <div class="pf-practicas-grid">
+
+            <!-- P1 -->
+            <a class="pf-practica-card" href="./01PrimeraPractica/inicio.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-azul">01</div>
+                    <span class="pf-practica-title">Primera Práctica — HTML Semántico</span>
+                </div>
+                <div class="pf-practica-body">
+                    Uso de etiquetas semánticas: nav, header, section, article, aside y footer con estilos CSS básicos.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P2 -->
+            <a class="pf-practica-card" href="./02Formulario/formulario.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-naranja">02</div>
+                    <span class="pf-practica-title">Formulario y Validación</span>
+                </div>
+                <div class="pf-practica-body">
+                    Formulario HTML con validación en JavaScript, métodos GET/POST y manejo de eventos de envío.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P3 -->
+            <a class="pf-practica-card" href="./03EjerciciosBasicos/01Ejercicio01.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-verde">03</div>
+                    <span class="pf-practica-title">Ejercicios Básicos de JS</span>
+                </div>
+                <div class="pf-practica-body">
+                    Ejercicio de cálculo de interés simple con JavaScript y manipulación del DOM.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P4 -->
+            <a class="pf-practica-card" href="./04Algoritmia/algoritmia.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-morado">04</div>
+                    <span class="pf-practica-title">Algoritmia</span>
+                </div>
+                <div class="pf-practica-body">
+                    Resolución de problemas algorítmicos: inversión de palabras, producto escalar y más.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P5 -->
+            <a class="pf-practica-card" href="./05Funciones/funciones.js">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-azul">05</div>
+                    <span class="pf-practica-title">Funciones en JavaScript</span>
+                </div>
+                <div class="pf-practica-body">
+                    Colección de funciones JavaScript: declaradas, expresadas y de flecha, con distintos patrones.
+                </div>
+                <div class="pf-practica-footer">Ver código JS</div>
+            </a>
+
+            <!-- P6 -->
+            <a class="pf-practica-card" href="./06Rompecabezas/rompecabezas.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-naranja">06</div>
+                    <span class="pf-practica-title">Rompecabezas Interactivo</span>
+                </div>
+                <div class="pf-practica-body">
+                    Juego de rompecabezas desarrollado en JS con manejo de eventos de arrastrar y soltar.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P7 -->
+            <a class="pf-practica-card" href="./07CRUD/public/index.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-verde">07</div>
+                    <span class="pf-practica-title">CRUD — Express + MySQL</span>
+                </div>
+                <div class="pf-practica-body">
+                    Sistema de gestión de usuarios con operaciones CRUD usando Node.js, Express y MySQL.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- P8 -->
+            <a class="pf-practica-card" href="./08CRUDMVC_final/public/index.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-morado">08</div>
+                    <span class="pf-practica-title">CRUD MVC Final</span>
+                </div>
+                <div class="pf-practica-body">
+                    Aplicación full-stack con arquitectura MVC: usuarios, productos, compras y módulo SSBU.
+                </div>
+                <div class="pf-practica-footer">Ver práctica</div>
+            </a>
+
+            <!-- Ejercicios JS Tarea -->
+            <a class="pf-practica-card" href="./Ejercicios JS Tarea/menu.html">
+                <div class="pf-practica-header">
+                    <div class="pf-practica-num bg-oscuro">T</div>
+                    <span class="pf-practica-title">Ejercicios JS — Tarea</span>
+                </div>
+                <div class="pf-practica-body">
+                    6 ejercicios de JavaScript de tarea: lógica, manejo de arrays, funciones y DOM.
+                </div>
+                <div class="pf-practica-footer">Ver ejercicios</div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- =========== FOOTER =========== -->
+    <footer class="pf-footer">
+        <strong>Romero Velázquez Héctor Hugo</strong> &nbsp;·&nbsp; CECyT 9 &nbsp;·&nbsp; Grupo 4IV8 &nbsp;·&nbsp; 2025–2026
+    </footer>
+
 </body>
 </html>
